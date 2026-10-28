@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+:root {
+  --background: #090e1a;
+  --surface: #0f1729;
+  --surface-raised: #131e36;
+  --border: #1f2c47;
+  --foreground: #e6edf7;
+  --muted: #8b98b3;
+  --muted-dim: #5c6a87;
+  --accent: #22d3ee;
+  --accent-dim: #0e7490;
+  --teal: #2dd4bf;
+  --danger: #f87171;
+  --danger-dim: #7f1d1d;
+  --warning: #fbbf24;
+  --warning-dim: #78350f;
+  --success: #34d399;
+  --success-dim: #065f46;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border: var(--border);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-dim: var(--muted-dim);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-teal: var(--teal);
+  --color-danger: var(--danger);
+  --color-danger-dim: var(--danger-dim);
+  --color-warning: var(--warning);
+  --color-warning-dim: var(--warning-dim);
+  --color-success: var(--success);
+  --color-success-dim: var(--success-dim);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  background-image: radial-gradient(circle at 15% 0%, rgba(34, 211, 238, 0.07), transparent 35%),
+    radial-gradient(circle at 85% 15%, rgba(45, 212, 191, 0.05), transparent 40%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-dim);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+}
+
+.card-raised {
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
